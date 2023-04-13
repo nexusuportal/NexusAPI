@@ -66,8 +66,11 @@
 		const passwordInput = document.getElementById('password');
 		const loginBtn = document.getElementById('login-btn');
 		const message = document.getElementById('message');
+		const waitTimes = [1000, 2000, 5000, 10000, 10000, 30000];
+		
 		let remainingAttempts = 3;
 		let timer = null;
+		let timesReset = 0;
 
 		function login(event) {
 			event.preventDefault();
@@ -93,7 +96,10 @@
 						loginBtn.disabled = false;
 						message.innerHTML = '';
 						remainingAttempts = 3;
-					}, 10000);
+						if timesReset < 5 {
+							timesReset++;
+						}
+					}, waitTimes[timesReset]);
 				}
 			}
 		}
