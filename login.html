@@ -1,96 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Raven Lock: NEXUSUPPORTAL Pipe</title>
-    <style>
-      #password-panel {
-        display: block;
-      }
-      #error-message {
-        display: none;
-      }
-      #stuck-message {
-        display: none;
-      }
-      #contact-message {
-        display: none;
-      }
-    </style>
-    <script>
-    var clickCount = 0;
+<head>
+	<title>Login System</title>
+	<style>
+		.container {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
 
-    function checkCredentials() {
-      var username = document.getElementById("username-input").value;
-      var password = document.getElementById("password-input").value;
+		h1 {
+			margin-top: 0;
+		}
 
-      // Make a POST request to the server to check the credentials
-      fetch("/login", {
-        method: "POST",
-        body: JSON.stringify({ username: username, password: password }),
-        headers: { "Content-Type": "application/json" }
-      })
-      .then(function(response) {
-        if (response.ok) {
-          // Authentication successful
-          document.getElementById("password-panel").style.display = "none";
-          document.getElementById("error-message").style.display = "none";
-          document.getElementById("stuck-message").style.display = "block";
-          setTimeout(function() {
-            if (clickCount === 0) {
-              document.getElementById("stuck-message").style.display = "none";
-              document.getElementById("contact-message").style.display = "block";
-            }
-          }, 1500);
-          document.getElementById("link").setAttribute("href", "https://www.ptfsdelta.tk");
-          document.getElementById("content").style.display = "block";
-        } else {
-          // Authentication failed
-          var count = parseInt(document.getElementById("count").innerHTML);
-          if (count < 2) {
-            document.getElementById("count").innerHTML = count + 1;
-          } else {
-            document.getElementById("password-panel").style.display = "none";
-            document.getElementById("error-message").style.display = "block";
-          }
-        }
-      })
-      .catch(function(error) {
-        // Handle any errors that occur during the request
-        console.error(error);
-      });
-    }
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
 
-    function linkClicked() {
-      clickCount++;
-      document.getElementById("stuck-message").style.display = "none";
-    }
-    </script>
-  </head>
-  <body>
-    <div id="password-panel">
-      <h1>Raven Lock: NEXUSUPPORTAL Pipe</h1>
-      <label for="username-input">Username:</label>
-      <input type="text" id="username-input">
-      <br>
-      <label for="password-input">Password:</label>
-      <input type="password" id="password-input">
-      <br>
-      <button onclick="checkCredentials()">Submit</button>
-    </div>
-    <div id="content" style="display: none;">
-      <p>You are now logged in!</p>
-      <p>Click <a id="link" href="https://nexusapi.database.ptfsdelta.tk" onclick="linkClicked()">here</a> to go to the website.</p>
-    </div>
-    <div id="error-message">
-      <p>You have entered incorrect credentials too many times. You are now locked out.</p>
-    </div>
-    <div id="stuck-message">
-      <p>Is it stuck?</p>
-    </div>
-    <div id="contact-message">
-      <p>Contact Rahul</p>
-    </div>
-    <p id="count" style="display: none;">0</p>
-  </body>
-</html>                              
+		input {
+			display: block;
+			margin: 0 auto 20px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+
+		.error {
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Login System</h1>
+		<form id="login-form">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<button type="submit" id="login-btn">Login</button>
+		</form>
+		<div id="message"></div>
+	</div>
+	<script>
+		const loginForm = document.getElementById('login-form');
+		const usernameInput = document.getElementById('username');
+		const passwordInput = document.getElementById('password');
+		const loginBtn = document.getElementById('login-btn');
+		const message = document.getElementById('message');
+		let remainingAttempts = 3;
+		let timer = null;
+
+		function login(event) {
+			event.preventDefault();
+			const username = usernameInput.value;
+			const password = passwordInput.value;
+			if (username === 'admin' && password === 'NEXUS@admin') {
+				message.innerHTML = 'Login successful.';
+				message.classList.remove('error');
+				window.location.href = 'https://nexusapi.database.ptfsdelta.tk';
+			} else {
+				remainingAttempts--;
+				message.innerHTML = `Incorrect username or password. ${remainingAttempts} attempts remaining.`;
+				message.classList.add('error');
+				if (remainingAttempts === 0) {
+					loginForm.reset();
+					usernameInput.disabled = true;
+					passwordInput.disabled = true;
+					loginBtn.disabled = true;
+					message.innerHTML = 'You have been logged out. Please wait 10 seconds to try again.';
+					timer = setTimeout(() => {
+						usernameInput.disabled = false;
+						passwordInput.disabled = false;
+						loginBtn.disabled = false;
+						message.innerHTML = '';
+						remainingAttempts = 3;
+					}, 10000);
+				}
+			}
+		}
+
+		loginForm.addEventListener('submit', login);
+	</script>
+</body>
+</html>
