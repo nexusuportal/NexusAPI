@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Raven Lock: NEXUSUPPORTAL Pipe</title>
+    <style>
+      #password-panel {
+        display: block;
+      }
+      #error-message {
+        display: none;
+      }
+      #stuck-message {
+        display: none;
+      }
+      #contact-message {
+        display: none;
+      }
+    </style>
+    <script>
+      var clickCount = 0;
+
+function checkCredentials() {
+  var username = document.getElementById("username-input").value;
+  var password = document.getElementById("password-input").value;
+
+  // Make a POST request to the server to check the credentials
+  fetch("/login", {
+    method: "POST",
+    body: JSON.stringify({ username: username, password: password }),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(function(response) {
+    if (response.ok) {
+      // Authentication successful
+      document.getElementById("password-panel").style.display = "none";
+      document.getElementById("error-message").style.display = "none";
+      document.getElementById("stuck-message").style.display = "block";
+      setTimeout(function() {
+        if (clickCount === 0) {
+          document.getElementById("stuck-message").style.display = "none";
+          document.getElementById("contact-message").style.display = "block";
+        }
+      }, 1500);
+      document.getElementById("link").setAttribute("href", "https://www.ptfsdelta.tk");
+      document.getElementById("content").style.display = "block";
+    } else {
+      // Authentication failed
+      var count = parseInt(document.getElementById("count").innerHTML);
+      if (count < 2) {
+        document.getElementById("count").innerHTML = count + 1;
+      } else {
+        document.getElementById("password-panel").style.display = "none";
+        document.getElementById("error-message").style.display = "block";
+      }
+    }
+  })
+  .catch(function(error) {
+    // Handle any errors that occur during the request
+    console.error(error);
+  });
+}
+
+function linkClicked() {
+  clickCount++;
+  document.getElementById("stuck-message").style.display = "none";
+}
+    </script>
+  </head>
+  <body>
+    <div id="password-panel">
+      <h1>Raven Lock: NEXUSUPPORTAL Pipe</h1>
+      <label for="username-input">Username:</label>
+      <input type="text" id="username-input">
+      <br>
+      <label for="password-input">Password:</label>
+      <input type="password" id="password-input">
+      <br>
+      <button onclick="checkCredentials()">Submit</button>
+    </div>
+    <div id="content" style="display: none;">
+      <p>You are now logged in!</p>
+      <p>Click <a id="link" href="https://nexusapi.database.ptfsdelta.tk" onclick="linkClicked()">here</a> to go to the website.</p>
+    </div>
+    <div id="error-message">
+      <p>You have entered incorrect credentials too many times. You are now locked out.</p>
+    </div>
+    <div id="stuck-message">
+      <p>Is it stuck?</p>
+    </div>
+    <div id="contact-message">
+      <p>Contact Rahul</p>
+    </div>
+    <p id="count" style="display: none;">0</p>
+  </body>
+</html>                              
