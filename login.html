@@ -96,7 +96,7 @@
 						loginBtn.disabled = false;
 						message.innerHTML = '';
 						remainingAttempts = 3;
-						if timesReset < 5 {
+						if (timesReset) < 5 {
 							timesReset++;
 						}
 					}, waitTimes[timesReset]);
