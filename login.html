@@ -61,6 +61,12 @@
 		<div id="message"></div>
 	</div>
 	<script>
+		hashCode = function(s) {
+ 			return s.split("").reduce(function(a, b) {
+    				a = ((a << 5) - a) + b.charCodeAt(0);
+    				return a & a;
+  			}, 0);
+		}
 		const loginForm = document.getElementById('login-form');
 		const usernameInput = document.getElementById('username');
 		const passwordInput = document.getElementById('password');
@@ -76,7 +82,7 @@
 			event.preventDefault();
 			const username = usernameInput.value;
 			const password = passwordInput.value;
-			if (username === 'admin' && password === 'NEXUS@admin') {
+			if (username === 'admin' && hashCode(password) === 261855461) {
 				message.innerHTML = 'Login successful.';
 				message.classList.remove('error');
 				window.location.href = 'https://nexusapi.database.ptfsdelta.tk';
