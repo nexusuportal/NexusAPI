@@ -83,9 +83,8 @@
 			const username = usernameInput.value;
 			const password = passwordInput.value;
 			if (username === 'admin' && hashCode(password) === 261855461) {
-				message.innerHTML = 'Login successful.';
+				message.innerHTML = 'Login successful. Click <a href="https://sites.google.com/view/mymaindatabasesitebynexus/home?authuser=1">here</a> to go to the admin panel.';
 				message.classList.remove('error');
-				window.location.href = 'https://nexusapi.database.ptfsdelta.tk';
 			} else {
 				remainingAttempts--;
 				message.innerHTML = `Incorrect username or password. ${remainingAttempts} attempts remaining.`;
@@ -103,14 +102,14 @@
 						message.innerHTML = '';
 						remainingAttempts = 3;
 						if (timesReset < 5) {
-							timesReset++;
-						}
-					}, waitTimes[timesReset]);
-				}
-			}
-		}
+							timesRest++;
+                        }
+                    }, waitTimes[timesReset]);
+                }
+            }
+        }
 
-		loginForm.addEventListener('submit', login);
-	</script>
+        loginForm.addEventListener('submit', login);
+    </script>
 </body>
 </html>
