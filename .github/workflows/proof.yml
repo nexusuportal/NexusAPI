@@ -8,4 +8,7 @@ jobs:
     steps:
       - uses: anishathalye/proof-html@v1.1.0
         with:
-          directory: /
+          directory: ./
+          enforce_https: false
+          tokens: |
+            {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}
