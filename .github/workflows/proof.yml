@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/cache@v2
       - run: bundle exec jekyll build
       - uses: anishathalye/proof-html@v1.1.0
         with:
