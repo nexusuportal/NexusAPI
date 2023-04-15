@@ -95,7 +95,7 @@
 					usernameInput.disabled = true;
 					passwordInput.disabled = true;
 					loginBtn.disabled = true;
-					message.innerHTML = 'You have been logged out. Please wait ' + (waitTimes[timesReset] / 1000) + ' seconds to try again.';
+					message.innerHTML = 'You have been logged out. Please wait ' + (Number(waitTimes[timesReset]) / 1000) + ' seconds to try again.';
 					timer = setTimeout(() => {
 						usernameInput.disabled = false;
 						passwordInput.disabled = false;
