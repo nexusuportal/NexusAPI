@@ -12,5 +12,5 @@ jobs:
         with:
           directory: ./
           enforce_https: false
-          tokens: |
-            {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"]
+#          tokens: |
+#            {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"]
