@@ -40,7 +40,8 @@ div.column {
 }
 
 div.half {
-  transform: scale(0.5);
+  height: 50%;
+  width: 50%;
 }
 
 div.row {
