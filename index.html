@@ -2,7 +2,6 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>NexusAPI</title>
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
@@ -51,19 +50,24 @@
 			clear: both;
 		}
 
-		/* Media queries for responsive design */
+		/* Responsive layout - adjusts to screen size */
 		@media only screen and (max-width: 600px) {
+			/* Adjust the font size of the h1 element */
+			h1 {
+				font-size: 24px;
+			}
+
+			/* Make the columns stack vertically */
 			.column {
 				width: 100%;
+				display: block;
+				margin-bottom: 20px;
 			}
-			.half {
-				width: 50%;
-			}
-		}
 
-		@media only screen and (max-width: 400px) {
-			input {
+			/* Adjust the size of the bot dsflogos */
+			.responsive {
 				width: 100%;
+				height: auto;
 			}
 		}
 	</style>
@@ -80,19 +84,19 @@
 		<h2>Google Chat Bots</h2>
 		<div class="row">
 			<div class="column">
-				<div style="transform: scale(0.75);">
+				<div class="half">
 					<img src="static/logo.png" alt="Logo" class="responsive">
 					<h3 style="text-align: center;">Advanced</h3>
 				</div>
 			</div>
 			<div class="column">
-				<div style="transform: scale(0.75);">
+				<div style="transform: scale(1.0);">
 					<img src="static/logo.png" alt="Logo" class="responsive">
 					<h3 style="text-align: center;">Premium</h3>
 				</div>
 			</div>
 			<div class="column">
-				<div style="transform: scale(0.75);">
+				<div class="half">
 					<img src="static/logo.png" alt="Logo" class="responsive">
 					<h3 style="text-align: center;">Basic</h3>
 				</div>
@@ -101,4 +105,3 @@
 	</div>
 </body>
 </html>
-
