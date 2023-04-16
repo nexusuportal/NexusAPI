@@ -35,10 +35,13 @@ div.responsive {
 
 div.column {
   float: left;
-  width: 33.33%;
   text-align: center;
 }
 
 div.half {
   transform: scale(0.5);
+}
+
+div.row {
+  display: flex;
 }
