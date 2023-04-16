@@ -8,7 +8,6 @@ html,body {
 
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: #0c343d;
 }
 
 div.header {
@@ -41,10 +40,4 @@ div.column {
 		
 div.half {
 	transform: scale(0.5);
-}
-
-@media screen and (max-width: 600px) {
-	div.column {
-		width: 100%;
-	}
 }
