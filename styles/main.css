@@ -12,11 +12,11 @@ body {
 
 div.header {
 	background-color: #282c34;
+	margin: auto;
 	padding: 60px;
 	text-align: center;
 	color: white;
 	min-height: 200px;
-	align-items: center;
 }
 
 div.content {
@@ -33,7 +33,7 @@ div.responsive {
 div.column {
 	float: left;
 	width: 33.33%;
-	align-items: center;
+	margin: auto;
 	text-align: center;
 }
 		
