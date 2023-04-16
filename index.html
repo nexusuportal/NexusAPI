@@ -47,6 +47,9 @@
   			padding: 60px;
   			text-align: center;
   			color: white;
+			min-height: 200px;
+			display: flex;
+			align-items: centre;
 		}
 	
 		.content {
@@ -57,8 +60,6 @@
 		/* Split the screen in half */
 		.split {
 			height: 100%;
-			width: 50%;
-			position: fixed;
 			z-index: 1;
 			top: 0;
 			overflow-x: hidden;
@@ -74,6 +75,13 @@
 		.right {
 			right: 0;
 		}
+
+		/* Style the image inside the centered container, if needed */
+		.centered img {
+			width: 150px;
+      		height: 150px;
+			border-radius: 50%;
+		}
 	</style>
 </head>
 <body>
@@ -83,7 +91,7 @@
 			<p>Get bots that work for you.</p>
 		</div>
 		<div class="split right">
-			<div class="content">
+			<div class="centered img">
 				<img src="static/logo.png" alt="Logo">
 			</div>
 		</div>
