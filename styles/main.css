@@ -25,7 +25,10 @@ div.content {
 }
 
 div.responsive {
+	max-width: 100%;
+	height: auto;
 	border-radius: 50%;
+	display: flex;
 }
 		
 div.column {
