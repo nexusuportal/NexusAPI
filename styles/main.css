@@ -33,6 +33,7 @@ div.responsive {
 div.column {
 	float: left;
 	width: 33.33%;
+	align-items: center;
 }
 		
 div.half {
