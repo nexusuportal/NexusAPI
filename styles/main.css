@@ -45,13 +45,3 @@ div.column {
 div.half {
   transform: scale(0.5);
 }
-
-@media only screen and (max-width: 768px) {
-  div.headerContent,
-  div.content {
-    width: 100%;
-  }
-  div.half {
-    transform: scale(0.3);
-  }
-}
