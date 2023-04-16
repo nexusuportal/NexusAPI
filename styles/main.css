@@ -35,6 +35,7 @@ div.responsive {
 
 div.column {
   float: left;
+  max-width: 33.33%;
   text-align: center;
 }
 
