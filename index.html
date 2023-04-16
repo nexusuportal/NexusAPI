@@ -54,48 +54,40 @@
 			margin: 0 auto;
 			padding: 20px;
 		}
-      		
-		/* Split the screen in half */
-		.split {
-			height: 100%;
-			z-index: 1;
-			top: 0;
-			overflow-x: hidden;
-			padding-top: 20px;
-			display: flex;
-		}
-
-		/* Control the left side */
-		.left {
-			left: 0;
-			flex: 1;
-		}
-
-		/* Control the right side */
-		.right {
-			right: 0;
-			flex: 1;
-		}
 
 		/* Style the image inside the centered container, if needed */
 		.centered img {
 			width: 150px;
-      		height: 150px;
+			height: 150px;
 			border-radius: 50%;
+		}
+		
+		.container {
+			display: flex;
+		}
+		
+		#left {
+			flex: 1;
+		}
+		
+		#right {
+			flex: 1;
 		}
 	</style>
 </head>
 <body>
 	<div class="header">
-		<div class="split left">
-			<h1>NEXUSupportal</h1>
-			<p>Get bots that work for you.</p>
-		</div>
-		<div class="split right">
-			<div class="centered img">
-				<img src="static/logo.png" alt="Logo">
+		<section class="container">
+			<div id:"left">
+				<h1>NEXUSupportal</h1>
+				<p>Get bots that work for you.</p>
 			</div>
-		</div>
+			<div id="right">
+				<div class="centered img">
+					<img src="static/logo.png" alt="Logo">
+				</div>
+			</div>
+		</section>
 	</div>
 	<div class="content">
 		<p>Content here!</p>
