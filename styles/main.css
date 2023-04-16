@@ -10,16 +10,13 @@ html, body {
 div.header {
   background-color: #282c34;
   height: 100vh;
-  width: 100%;
-  overflow-x: none;
-}
-
-div.headerContent {
   margin: 0 auto;
-  width: 960px;
   text-align: center;
   padding: 60px 0;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.content {
