@@ -34,6 +34,7 @@ div.column {
 	float: left;
 	width: 33.33%;
 	align-items: center;
+	text-align: center;
 }
 		
 div.half {
