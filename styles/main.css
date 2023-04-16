@@ -9,3 +9,34 @@ html,body {
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.header {
+	background-color: #282c34;
+	padding: 60px;
+	text-align: center;
+	color: white;
+	min-height: 200px;
+	align-items: center;
+	font-size: 32px;
+}
+
+.content {
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.responsive {
+	width: 100%;
+	height: auto;
+	border-radius: 50%;
+}
+		
+.column {
+	float: left;
+	width: 33.33%;
+	text-align: center;
+}
+		
+.half {
+	transform: scale(0.5);
+}
