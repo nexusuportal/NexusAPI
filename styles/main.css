@@ -10,7 +10,7 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.header {
+header {
 	background-color: #282c34;
 	padding: 60px;
 	text-align: center;
@@ -20,23 +20,23 @@ body {
 	font-size: 32px;
 }
 
-.content {
+content {
 	margin: 0 auto;
 	padding: 20px;
 }
 
-.responsive {
+responsive {
 	width: 100%;
 	height: auto;
 	border-radius: 50%;
 }
 		
-.column {
+column {
 	float: left;
 	width: 33.33%;
 	text-align: center;
 }
 		
-.half {
+half {
 	transform: scale(0.5);
 }
