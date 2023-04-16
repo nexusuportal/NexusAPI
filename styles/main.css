@@ -10,7 +10,7 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-header {
+div.header {
 	background-color: #282c34;
 	padding: 60px;
 	text-align: center;
@@ -20,23 +20,23 @@ header {
 	font-size: 32px;
 }
 
-content {
+div.content {
 	margin: 0 auto;
 	padding: 20px;
 }
 
-responsive {
+div.responsive {
 	width: 100%;
 	height: auto;
 	border-radius: 50%;
 }
 		
-column {
+div.column {
 	float: left;
 	width: 33.33%;
 	text-align: center;
 }
 		
-half {
+div.half {
 	transform: scale(0.5);
 }
