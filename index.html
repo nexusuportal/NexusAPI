@@ -42,26 +42,53 @@
 			font-weight: bold;
 		}
 		
-		.div-header {
+		.header {
 			background-color: #282c34;
   			padding: 60px;
   			text-align: center;
   			color: white;
 		}
 	
-		.div-content {
+		.content {
 			margin: 0 auto;
 			padding: 20px;
 		}
-      
+      		
+		/* Split the screen in half */
+		.split {
+			height: 100%;
+			width: 50%;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			overflow-x: hidden;
+			padding-top: 20px;
+		}
+
+		/* Control the left side */
+		.left {
+			left: 0;
+		}
+
+		/* Control the right side */
+		.right {
+			right: 0;
+		}
 	</style>
 </head>
 <body>
-	<div class="div-header">
-		<h1>NEXUSupportal</h1>
-		<p>Get bots that work for you.</p>
+	<div class="header">
+		<div class="split left">
+			<h1>NEXUSupportal</h1>
+			<p>Get bots that work for you.</p>
+		</div>
+		<div class="split right">
+			<div class="content">
+				<img src="static/logo.png" alt="Logo">
+			</div>
+		</div>
 	</div>
-	<div class="div-content">
+	<div class="content">
 		<p>Content here!</p>
 	</div>
 </body>
