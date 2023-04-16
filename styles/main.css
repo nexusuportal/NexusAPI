@@ -13,7 +13,7 @@ body {
 div.header {
 	background-color: #282c34;
 	min-height: 200px;
-	padding: 60px;
+	padding: 60px 0;
 	margin: 0 auto;
 	text-align: center;
 	color: white;
