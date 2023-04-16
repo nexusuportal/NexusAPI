@@ -3,7 +3,7 @@ html,body {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-	overflow-x: hidden; 
+	overflow-x: auto;
 }
 
 body {
@@ -33,7 +33,6 @@ div.responsive {
 div.column {
 	float: left;
 	width: 33.33%;
-	text-align: center;
 }
 		
 div.half {
