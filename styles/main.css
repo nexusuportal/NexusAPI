@@ -41,3 +41,9 @@ div.column {
 div.half {
 	transform: scale(0.5);
 }
+
+@media screen and (max-width: 600px) {
+	div.column {
+		width: 100%;
+	}
+}
