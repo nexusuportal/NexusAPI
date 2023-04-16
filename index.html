@@ -63,21 +63,23 @@
 			border-radius: 50%;
 		}
 		
-		.container {
-			display: flex;
+		.column {
+			float: left;
+			width: 33.33%;
 			text-align: center;
 		}
-		
-		#col-1 {
-			flex: 1;
+
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
 		}
 		
-		#col-2 {
-			flex: 1;
-		}
-		
-		#col-3 {
-			flex: 1;
+		/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 600px) {
+			.column {
+				width: 100%;
+			}
 		}
 	</style>
 </head>
@@ -89,25 +91,25 @@
 	<div class="content">
 		<h1>Bots</h1>
 		<h2>Google Chat Bots</h2>
-		<section class="container">
-			<div id="col-1">
+		<div class="row">
+			<div class="column">
 				<div class="centered img">
 					<img src="static/logo.png" alt="Logo">
 				</div>
 				<p>Advanced</p>
-			<div id="col-2">
+			<div class="column">
 				<div class="centered img">
 					<img src="static/logo.png" alt="Logo">
 				</div>
 				<p>Premium</p>
 			</div>
-			<div id="col-3">
+			<div class="column">
 				<div class="centered img">
 					<img src="static/logo.png" alt="Logo">
 				</div>
 				<p>Basic</p>
 			</div>
-		</section>
+		</div>
 	</div>
 </body>
 </html>
