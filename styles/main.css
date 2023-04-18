@@ -46,3 +46,16 @@ div.half {
 div.row {
   display: flex;
 }
+
+div.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.flex-item-left {
+  flex: 50%;
+}
+
+div.flex-item-right {
+  flex: 50%;
+}
