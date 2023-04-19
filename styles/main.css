@@ -29,11 +29,6 @@ div.responsive {
   height: auto;
 }
 
-div.center {
-  padding: 70px 0;
-  border: 3px solid green;
-}
-
 div.column {
   flex: 33.33%;
   text-align: center;
