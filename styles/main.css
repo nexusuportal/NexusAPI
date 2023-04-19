@@ -25,11 +25,13 @@ div.content {
 }
 
 div.responsive {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 100%;
   height: auto;
+}
+
+div.center {
+  padding: 70px 0;
+  border: 3px solid green;
 }
 
 div.column {
