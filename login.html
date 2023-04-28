@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Login System</title>
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
 	<style>
 		.container {
 			max-width: 500px;
@@ -49,6 +51,11 @@
 	</style>
 </head>
 <body>
+	<div class="navbarul">
+		<li style="float: left;"><a href="./index.html">Home</a></li>
+		<li style="float: left;"><a href="./about.html">About</a></li>
+		<li style="float: right;"><a style="background-color: #04AA6D;">Login</a></li>
+	</div>
 	<div class="container">
 		<h1>Login System</h1>
 		<form id="login-form">
@@ -61,6 +68,12 @@
 		<div id="message"></div>
 	</div>
 	<script>
+		hashCode = function(s) {
+ 			return s.split("").reduce(function(a, b) {
+    				a = ((a << 5) - a) + b.charCodeAt(0);
+    				return a & a;
+  			}, 0);
+		}
 		const loginForm = document.getElementById('login-form');
 		const usernameInput = document.getElementById('username');
 		const passwordInput = document.getElementById('password');
@@ -76,10 +89,9 @@
 			event.preventDefault();
 			const username = usernameInput.value;
 			const password = passwordInput.value;
-			if (username === 'admin' && password === 'NEXUS@admin') {
-				message.innerHTML = 'Login successful.';
+			if (username === 'admin' && hashCode(password) === 261855461) {
+				message.innerHTML = 'Login successful. Click <a href="https://sites.google.com/view/mymaindatabasesitebynexus/home?authuser=1">here</a> to go to the admin panel.';
 				message.classList.remove('error');
-				window.location.href = 'https://nexusapi.database.ptfsdelta.tk';
 			} else {
 				remainingAttempts--;
 				message.innerHTML = `Incorrect username or password. ${remainingAttempts} attempts remaining.`;
@@ -89,7 +101,7 @@
 					usernameInput.disabled = true;
 					passwordInput.disabled = true;
 					loginBtn.disabled = true;
-					message.innerHTML = 'You have been logged out. Please wait ' + waitTimes[timesReset] + ' seconds to try again.';
+					message.innerHTML = 'You have been logged out. Please wait ' + (Number(waitTimes[timesReset]) / 1000) + ' seconds to try again.';
 					timer = setTimeout(() => {
 						usernameInput.disabled = false;
 						passwordInput.disabled = false;
@@ -98,13 +110,13 @@
 						remainingAttempts = 3;
 						if (timesReset < 5) {
 							timesReset++;
-						}
-					}, waitTimes[timesReset]);
-				}
-			}
-		}
+                        }
+                    }, waitTimes[timesReset]);
+                }
+            }
+        }
 
-		loginForm.addEventListener('submit', login);
-	</script>
+        loginForm.addEventListener('submit', login);
+    </script>
 </body>
 </html>
